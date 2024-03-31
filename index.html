@@ -21,8 +21,11 @@
           <input
             type="text"
             id="full-name"
-            name="full-name"
+            name="fullName"
             placeholder="Full Name"
+            required
+            minlength="2"
+            maxlength="100"
           />
         </div>
         <!-- Phone Number -->
@@ -31,8 +34,10 @@
           <input
             type="tel"
             id="phone-number"
-            name="phone-number"
+            name="phoneNumber"
             placeholder="555-555-5555"
+            required
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           />
         </div>
         <!-- Email Address -->
@@ -41,8 +46,9 @@
           <input
             type="email"
             id="email-address"
-            name="email-address"
-            placeholder="example@provider.extension"
+            name="emailAddress"
+            placeholder="example@hostname.extension"
+            required
           />
         </div>
         <!-- Website URL -->
@@ -51,8 +57,9 @@
           <input
             type="url"
             id="website-url"
-            name="website-url"
+            name="websiteUrl"
             placeholder="https://your-website.com"
+            required
           />
         </div>
         <!-- Password -->
@@ -63,6 +70,8 @@
             id="password1"
             name="password1"
             placeholder="Enter Password"
+            required
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
           />
         </div>
         <!-- Confirm Password -->
@@ -73,13 +82,15 @@
             id="password2"
             name="password2"
             placeholder="Confirm Password"
+            required
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
           />
         </div>
         <button type="submit">Register</button>
       </form>
       <!-- Error/Success Message -->
       <div class="message-container">
-        <h3>Do Not Hesitate!</h3>
+        <h3 id="message">Do Not Hesitate!</h3>
       </div>
     </div>
     <!-- Script -->
